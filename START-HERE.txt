@@ -1,0 +1,27 @@
+PENNYWISE — START HERE
+
+1) Install Node.js 18 or newer.
+2) Unzip the project.
+3) Open the project folder in VS Code.
+4) Open server/.env.example and copy it to server/.env.
+5) Set MONGO_URI to your real MongoDB URI and set JWT_SECRET to a long random secret.
+6) Open a terminal in the project root and run:
+   npm run install:all
+   npm run dev
+7) Visit http://localhost:5173
+
+If MongoDB is local, make sure the MongoDB service is running first.
+If using Atlas, allow your current IP in Network Access and use the database user credentials in MONGO_URI.
+
+VIVA QUICK GUIDE
+- DB connection: server/config.js
+- User collection schema: server/models/User.js
+- Transactions collection schema: server/models/Transaction.js
+- Budgets collection schema: server/models/Budget.js
+- Login/register: server/routes/auth.js
+- Create/read/update/delete transactions: server/routes/transactions.js
+- Budget API: server/routes/budget.js
+- Frontend-to-backend HTTP calls: client/src/api.js
+- Dashboard UI: client/src/App.jsx
+
+A working MongoDB URI cannot be pre-filled into a ZIP because it must use your own credentials. The project includes the connection code and an .env.example. Confirm persistence by adding a transaction, restarting the app, and checking the pennywise database in MongoDB Compass/Atlas.
